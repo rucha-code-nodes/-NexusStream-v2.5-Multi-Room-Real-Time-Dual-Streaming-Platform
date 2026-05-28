@@ -63,6 +63,10 @@ npm start
 5. Click **Connect Hardware Sensors** on the client, select your tracking surface, and hit **Push Live Feeds**.
 
 ```
+## 🌐 Live Project Links
+
+* 📹 **Video Demonstration: https://drive.google.com/file/d/1oH6V7hc8qFh3pIEBFU_9MOKGf9KC_SuR/view?usp=sharing
+* 🚀 **Live Production Deployment:** [Launch the Live App on Vercel/Render](YOUR_DEPLOYED_APP_URL_HERE)
 
 
 
