@@ -1,6 +1,13 @@
 ## 📄 File 2: `METHODOLOGY.md`
 
+```markdown
 # Technical Architecture & Engineering Methodology
+
+## ⚙️ Core Technology Stack
+* **WebRTC API:** Used for direct browser-to-browser media track streaming.
+* **Socket.IO:** Real-time event gateway used exclusively to manage multi-room room entry protocols and transfer connection metadata (Offers, Answers, and ICE Candidates).
+* **React.js:** Orchestrates app routing, view management, and dynamic state updates across pages.
+* **HTML5 Canvas:** Dynamically layers the live microsecond timestamp onto the camera stream.
 
 ## 🧠 Architectural Choices
 
@@ -27,11 +34,4 @@
   const isolatedStream = new MediaStream([event.track]);
 
 
-
-This cleanly split the inbound tracks into isolated, non-conflicting render lanes.
-
-### Challenge 2: Responsive 16:9 Aspect Ratio Boundary Clipping
-
-* **The Problem:** During layout restructuring, the high-contrast timestamp overlay mysteriously vanished from view on the Host monitor. The canvas element resolution variables were hardcoded to a legacy boxy 4:3 layout format ($640 \times 480$), but the polished CSS system forced a fluid 16:9 widescreen orientation rule featuring an aggressive `object-fit: cover` parameter. The browser was dynamically scaling and clipping off the top $15\%$ margin area of the video track, throwing the timestamp outside the user's visible viewport.
-* **The Solution:** We standardized our coordinates and graphics dimensions across both layers. We updated the canvas context properties to initialize at a pristine widescreen $1280 \times 720$ resolution baseline, aligning it perfectly with the 16:9 viewport scale. The draw path tracking anchors were shifted to safe inside vectors `(40, 40)`, ensuring the HUD capsule prints reliably across all screens.
-
+Challenge 2: Responsive 16:9 Aspect Ratio Boundary ClippingThe Problem: During layout restructuring, the high-contrast timestamp overlay mysteriously vanished from view on the Host monitor. The canvas element resolution variables were hardcoded to a legacy boxy 4:3 layout format ($640 \times 480$), but the polished CSS system forced a fluid 16:9 widescreen orientation rule featuring an aggressive object-fit: cover parameter. The browser was dynamically scaling and clipping off the top $15\%$ margin area of the video track, throwing the timestamp outside the user's visible viewport.The Solution: We standardized our coordinates and graphics dimensions across both layers. We updated the canvas context properties to initialize at a pristine widescreen $1280 \times 720$ resolution baseline, aligning it perfectly with the 16:9 viewport scale. The draw path tracking anchors were shifted to safe inside vectors (40, 40), ensuring the HUD capsule prints reliably across all screens.
