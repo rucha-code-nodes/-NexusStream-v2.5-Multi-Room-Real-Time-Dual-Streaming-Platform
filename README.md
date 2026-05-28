@@ -6,6 +6,21 @@
 
 An enterprise-grade, ultra-low latency real-time streaming application that concurrently pipes synchronized webcam feeds (with hard-burned canvas timestamp HUDs) and screen share tracks over custom WebRTC peer connection corridors.
 
+## 🛠️ Technologies Used
+
+* **Frontend Engine:** React.js, HTML5 Canvas 2D API, Context API
+* **Backend Runtime & Signaling:** Node.js, Express, Socket.IO
+* **Real-Time Protocols:** WebRTC (RTCPeerConnection API)
+* **Design Framework:** Responsive CSS3 Custom Properties (Glassmorphic Dark Theme)
+* **State & Logs Persistence:** Web Storage API (localStorage Cluster Tracking)
+
+## 📋 Prerequisites
+Before running the application, ensure you have the following installed:
+* **Node.js** (v18.x or higher recommended)
+* **npm** (v9.x or higher)
+* A modern web browser with camera and screen-sharing permissions enabled (Chrome, Edge, or Firefox)
+
+
 ## ⚡ Quick Start (Local Setup)
 
 ### 1. Clone the Repository
